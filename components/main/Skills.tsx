@@ -17,49 +17,67 @@ const Skills = () => {
     >
       <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row flex-wrap mb-7 gap-5 items-center justify-center">
         {Common_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
+          <div key={index}>
+            <SkillDataProvider
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+            />
+            <div className="text-center mt-3 text-white text-[10px]">
+              {image.skill_name}
+            </div>
+          </div>
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <div className="flex flex-row flex-wrap mb-7 gap-5 items-center justify-center">
         {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
+          <div key={index}>
+            <SkillDataProvider
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+            />
+            <div className="text-center mt-3 text-white text-[10px]">
+              {image.skill_name}
+            </div>
+          </div>
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      <div className="flex flex-row flex-wrap mb-7 gap-5 items-center justify-center">
         {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
+          <div key={index}>
+            <SkillDataProvider
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+            />
+            <div className="text-center mt-3 text-white text-[10px]">
+              {image.skill_name}
+            </div>
+          </div>
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      <div className="flex flex-row flex-wrap mb-7 gap-5 items-center justify-center">
         {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
+          <div key={index}>
+            <SkillDataProvider
+              src={image.Image}
+              width={image.width}
+              height={image.height}
+              index={index}
+            />
+            <div className="text-center mt-3 text-white text-[10px]">
+              {image.skill_name}
+            </div>
+          </div>
         ))}
       </div>
 

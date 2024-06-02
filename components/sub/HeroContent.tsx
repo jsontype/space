@@ -47,11 +47,10 @@ const HeroContent = () => {
         >
           こんにちは!Webプログラマーの「Azuma」です。韓国から来ました。東京で開発者として働いています。
         </motion.p>
-        {/* ***! 1.  https://jsontype.github.io/home/menu0.html */}
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-          href="https://jsontype.github.io/home/menu0.html"
+          href="https://jsontype.github.io/home"
         >
           Old Portfolio
         </motion.a>
