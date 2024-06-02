@@ -23,8 +23,8 @@ const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+          <h1 className="Welcome-text text-[13px] pr-1">
+            Web Developer Portfolio
           </h1>
         </motion.div>
 
@@ -38,7 +38,6 @@ const HeroContent = () => {
               {" "}
               Yang Donghwa{" "}
             </span>
-            project exprience
           </span>
         </motion.div>
 
@@ -46,13 +45,15 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          こんにちは！Webプログラマーの「Azuma」です。韓国から来ました。東京で開発者として働いています。
+          こんにちは!Webプログラマーの「Azuma」です。韓国から来ました。東京で開発者として働いています。
         </motion.p>
+        {/* ***! 1.  https://jsontype.github.io/home/menu0.html */}
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          href="https://jsontype.github.io/home/menu0.html"
         >
-          Learn More!
+          Old Portfolio
         </motion.a>
       </div>
 

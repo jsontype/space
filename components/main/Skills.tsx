@@ -1,13 +1,12 @@
 import {
   Backend_skill,
   Frontend_skill,
-  Full_stack,
   Other_skill,
-  Skill_data,
-} from "@/constants";
-import React from "react";
-import SkillDataProvider from "../sub/SkillDataProvider";
-import SkillText from "../sub/SkillText";
+  Common_skill,
+} from "@/constants"
+import React from "react"
+import SkillDataProvider from "../sub/SkillDataProvider"
+import SkillText from "../sub/SkillText"
 
 const Skills = () => {
   return (
@@ -19,7 +18,7 @@ const Skills = () => {
       <SkillText />
 
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Skill_data.map((image, index) => (
+        {Common_skill.map((image, index) => (
           <SkillDataProvider
             key={index}
             src={image.Image}
@@ -43,17 +42,6 @@ const Skills = () => {
       </div>
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Backend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Full_stack.map((image, index) => (
           <SkillDataProvider
             key={index}
             src={image.Image}
@@ -89,7 +77,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills
