@@ -12,7 +12,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
+      className="relative flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20 z-[50]"
       style={{ transform: "scale(0.9" }}
     >
       <SkillText />
@@ -94,8 +94,17 @@ const Skills = () => {
           />
         </div>
       </div>
+      <div>
+        <a
+          className="relative py-3 px-[60px] button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          href="https://docs.google.com/spreadsheets/d/1K6zeowhIPLv2ZU4sfpQqwWXwOCbIJ1Z3/edit#gid=214401444"
+          target="_blank"
+        >
+          Skill Sheet
+        </a>
+      </div>
     </section>
-  )
+  );
 }
 
 export default Skills
