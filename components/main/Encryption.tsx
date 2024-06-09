@@ -1,11 +1,21 @@
 "use client";
-import React from "react";
-
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
+import ModalAccordion from "../sub/ModalAccordion";
 import Image from "next/image";
 
 const Encryption = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
       <div className="absolute w-auto h-auto top-0 z-[5]">
@@ -13,17 +23,19 @@ const Encryption = () => {
           variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
         >
-          Performance
+          About
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             {" "}
-            &{" "}
+            Me{" "}
           </span>
-          Security
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
-        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
+      <div
+        className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto cursor-pointer"
+        onClick={handleImageClick}
+      >
+        <div className="flex flex-col items-center group w-auto h-auto">
           <Image
             src="/LockTop.png"
             alt="Lock top"
@@ -39,9 +51,10 @@ const Encryption = () => {
             className=" z-10"
           />
         </div>
-
         <div className="Welcome-box px-[15px] py-[4px] z-[20] brder my-[20px] border-[#7042f88b] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px]">Encryption</h1>
+          <h1 className="Welcome-text text-[12px] cursor-pointer">
+            Self Introduction
+          </h1>
         </div>
       </div>
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
@@ -61,6 +74,14 @@ const Encryption = () => {
           src="/encryption.webm/"
         />
       </div>
+      {isOpen && (
+        <div className="z-[40]">
+          <ModalAccordion
+            open={isOpen}
+            handleClose={handleCloseModal}
+          />
+        </div>
+      )}
     </div>
   );
 };
