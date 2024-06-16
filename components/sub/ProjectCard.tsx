@@ -1,15 +1,26 @@
+"use client"
+
 import Image from "next/image"
 import React from "react"
 
 interface Props {
   src: string
   title: string
+  name: string
   description: string
 }
 
-const ProjectCard = ({ src, title, description }: Props) => {
+const ProjectCard = ({ src, title, name, description }: Props) => {
+  // ***! 1. sub/MoviesModal.tsx, sub/TodosModal.tsx, sub/ShoppingModal.tsx を作成する。
+  // ***! 2. 上の画面をこのページにてimportして、name switch文を使って、onClick関数でモーダルを開く
+  // ***! 3.　中を作る：ShoppingModalだけ。Countだけでいい。
+  const onClick = () => alert(`Open ${name}`)
+
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]">
+    <div
+      className="relative overflow-hidden rounded-lg shadow-lg border-0 hover:border-2 hover:border-[#2A0E61] z-[20] cursor-pointer"
+      onClick={onClick}
+    >
       <Image
         src={src}
         alt={title}

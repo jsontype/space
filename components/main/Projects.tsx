@@ -1,7 +1,11 @@
-import React from "react";
-import ProjectCard from "../sub/ProjectCard";
+"use client"
+
+import React from "react"
+import ProjectCard from "../sub/ProjectCard"
 
 const Projects = () => {
+  const openModal = (project: string) => () => alert(`Open ${project}`)
+
   return (
     <div
       className="flex flex-col items-center justify-center py-20"
@@ -12,23 +16,26 @@ const Projects = () => {
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
+          name="movies"
           src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
+          title="Movies App Demo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <ProjectCard
+          name="todos"
           src="/SpaceWebsite.png"
-          title="Space Themed Website"
+          title="Todos App Demo"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        />
+        <ProjectCard
+          name="shopping"
+          src="/CardImage.png"
+          title="Shopping App Demo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

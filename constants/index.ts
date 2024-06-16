@@ -1,4 +1,3 @@
-// ***! 3.
 export const Common_skill = [
   {
     skill_name: "Html 5",
