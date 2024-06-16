@@ -4,8 +4,6 @@ import React from "react"
 import ProjectCard from "../sub/ProjectCard"
 
 const Projects = () => {
-  const openModal = (project: string) => () => alert(`Open ${project}`)
-
   return (
     <div
       className="flex flex-col items-center justify-center py-20"
@@ -35,7 +33,7 @@ const Projects = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
