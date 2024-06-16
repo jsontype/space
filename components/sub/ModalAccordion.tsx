@@ -25,7 +25,7 @@ const ModalAccordion: React.FC<ModalAccordionProps> = ({
   };
 
   const boxStyle: SxProps<Theme> = {
-    width: "50%",
+    width: "100%",
     bgcolor: "black",
     border: "2px solid #000",
     boxShadow: 24,
