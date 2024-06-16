@@ -45,7 +45,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          こんにちは!Webプログラマーの「Azuma」です。韓国から来ました。東京で開発者として働いています。
+          こんにちは！Webプログラマーの「Azuma」です。韓国から来ました。東京で開発者として働いています。
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
