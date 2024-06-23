@@ -17,6 +17,8 @@ const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
   }
 
   const modalContentStyle: SxProps<Theme> = {
+    display: 'flex',
+    flexDirection: 'column',
     position: 'relative',
     width: '90%',
     maxWidth: '1200px',
@@ -30,29 +32,19 @@ const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
   }
 
   const contentStyle: SxProps<Theme> = {
+    flexGrow: 1,
     overflowY: 'auto',
     padding: '20px',
-    position: 'relative',
-  }
-
-  const closeButtonWrapperStyle: SxProps<Theme> = {
-    position: 'absolute',
-    bottom: '10px',
-    right: '10px',
-    zIndex: 1,
-  }
-
-  const closeButtonStyle: SxProps<Theme> = {
     position: 'relative',
   }
 
   return (
     <Modal open={open} onClose={handleClose} sx={modalStyle}>
       <Box sx={modalContentStyle}>
-        <Typography variant="h6" fontWeight="bold">
+        <Typography className="px-[20px]" variant="h6" fontWeight="bold">
           ストーリー
         </Typography>
-        <Box sx={contentStyle}>
+        <Box sx={contentStyle} className="pb-[60px]">
           <Typography variant="body1">
             小学生の時、私はプログラマーになりたかった。
             <br />
@@ -105,12 +97,16 @@ const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
             <br />
             <br />
             どんなことを想像してもとても楽しいのだ。
+            <br />
+            <br />
+            Fin.
+            <br />
           </Typography>
-          <Box sx={closeButtonWrapperStyle}>
-            <Button onClick={handleClose} sx={closeButtonStyle}>
-              CLOSE
-            </Button>
-          </Box>
+        </Box>
+        <Box className="sticky z-[10] mt-[20px] border-t p-[10px] text-right right-0 bottom-0">
+          <Button onClick={handleClose} className="relative">
+            CLOSE
+          </Button>
         </Box>
       </Box>
     </Modal>
