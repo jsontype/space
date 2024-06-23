@@ -1,33 +1,28 @@
-"use client"
+'use client'
 
-import React, { useState } from "react";
-import { Typography } from "@mui/material";
-import SkillDataProvider from "../sub/SkillDataProvider";
-import SkillText from "../sub/SkillText";
-import SkillSheetModal from "../sub/SkillSheetModal";
-import {
-  Backend_skill,
-  Frontend_skill,
-  Other_skill,
-  Common_skill,
-} from "@/constants";
+import React, { useState } from 'react'
+import { Typography } from '@mui/material'
+import SkillDataProvider from '../sub/SkillDataProvider'
+import SkillText from '../sub/SkillText'
+import SkillSheetModal from '../sub/SkillSheetModal'
+import { Backend_skill, Frontend_skill, Other_skill, Common_skill } from '@/constants'
 
 const Skills = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
 
   const handleOpenModal = () => {
-    setModalOpen(true);
-  };
+    setModalOpen(true)
+  }
 
   const handleCloseModal = () => {
-    setModalOpen(false);
-  };
+    setModalOpen(false)
+  }
 
   return (
     <section
       id="skills"
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20 z-[20]"
-      style={{ transform: "scale(0.9)" }}
+      style={{ transform: 'scale(0.9)' }}
     >
       <SkillText />
 
@@ -40,9 +35,7 @@ const Skills = () => {
               height={image.height}
               index={index}
             />
-            <div className="text-center mt-3 text-white text-[10px]">
-              {image.skill_name}
-            </div>
+            <div className="text-center mt-3 text-white text-[10px]">{image.skill_name}</div>
           </div>
         ))}
       </div>
@@ -56,9 +49,7 @@ const Skills = () => {
               height={image.height}
               index={index}
             />
-            <div className="text-center mt-3 text-white text-[10px]">
-              {image.skill_name}
-            </div>
+            <div className="text-center mt-3 text-white text-[10px]">{image.skill_name}</div>
           </div>
         ))}
       </div>
@@ -72,9 +63,7 @@ const Skills = () => {
               height={image.height}
               index={index}
             />
-            <div className="text-center mt-3 text-white text-[10px]">
-              {image.skill_name}
-            </div>
+            <div className="text-center mt-3 text-white text-[10px]">{image.skill_name}</div>
           </div>
         ))}
       </div>
@@ -88,9 +77,7 @@ const Skills = () => {
               height={image.height}
               index={index}
             />
-            <div className="text-center mt-3 text-white text-[10px]">
-              {image.skill_name}
-            </div>
+            <div className="text-center mt-3 text-white text-[10px]">{image.skill_name}</div>
           </div>
         ))}
       </div>
@@ -121,6 +108,6 @@ const Skills = () => {
       </div>
     </section>
   )
-};
+}
 
-export default Skills;
+export default Skills

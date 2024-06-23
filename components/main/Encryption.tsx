@@ -1,20 +1,20 @@
-"use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
-import ModalAccordion from "../sub/ModalAccordion"
-import Image from "next/image";
+'use client'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { slideInFromTop } from '@/utils/motion'
+import ModalAccordion from '../sub/ModalAccordion'
+import Image from 'next/image'
 
 const Encryption = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleImageClick = () => {
-    setIsOpen(true);
-  };
+    setIsOpen(true)
+  }
 
   const handleCloseModal = () => {
-    setIsOpen(false);
-  };
+    setIsOpen(false)
+  }
 
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
@@ -25,8 +25,8 @@ const Encryption = () => {
         >
           About
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            {" "}
-            Me{" "}
+            {' '}
+            Me{' '}
           </span>
         </motion.div>
       </div>
@@ -43,18 +43,10 @@ const Encryption = () => {
             height={50}
             className="w-[50px] translate-y-5 transition-all duration-200 group-hover:translate-y-11"
           />
-          <Image
-            src="/LockMain.png"
-            alt="Lock Main"
-            width={70}
-            height={70}
-            className=" z-10"
-          />
+          <Image src="/LockMain.png" alt="Lock Main" width={70} height={70} className=" z-10" />
         </div>
         <div className="Welcome-box px-[15px] py-[4px] z-[20] brder my-[20px] border-[#7042f88b] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px] cursor-pointer">
-            Self Introduction
-          </h1>
+          <h1 className="Welcome-text text-[12px] cursor-pointer">Self Introduction</h1>
         </div>
       </div>
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
@@ -76,14 +68,11 @@ const Encryption = () => {
       </div>
       {isOpen && (
         <div className="z-[40]">
-          <ModalAccordion
-            open={isOpen}
-            handleClose={handleCloseModal}
-          />
+          <ModalAccordion open={isOpen} handleClose={handleCloseModal} />
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Encryption;
+export default Encryption
