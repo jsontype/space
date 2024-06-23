@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal, Box, Typography, Button } from '@mui/material'
 import { SxProps, Theme } from '@mui/material/styles'
 
@@ -8,28 +8,51 @@ interface StoryModalProps {
 }
 
 const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
-  const positionStyle: SxProps<Theme> = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+  const showScrollbar = useState(false)
+
+  const modalStyle: SxProps<Theme> = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 
-  const boxStyle: SxProps<Theme> = {
-    width: '100%',
+  const modalContentStyle: SxProps<Theme> = {
+    position: 'relative',
+    width: '90%',
+    maxWidth: '1200px',
     bgcolor: 'white',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    overflowY: showScrollbar ? 'scroll' : 'auto',
+    maxHeight: '70vh',
+    margin: 'auto',
+  }
+
+  const contentStyle: SxProps<Theme> = {
+    overflowY: 'auto',
+    padding: '20px',
+    position: 'relative',
+  }
+
+  const closeButtonWrapperStyle: SxProps<Theme> = {
+    position: 'absolute',
+    bottom: '10px',
+    right: '10px',
+    zIndex: 1,
+  }
+
+  const closeButtonStyle: SxProps<Theme> = {
+    position: 'relative',
   }
 
   return (
-    <Modal open={open} onClose={handleClose}>
-      <Box sx={positionStyle}>
-        <Box sx={boxStyle}>
-          <Typography variant="h6" fontWeight="bold">
-            ストーリー
-          </Typography>
+    <Modal open={open} onClose={handleClose} sx={modalStyle}>
+      <Box sx={modalContentStyle}>
+        <Typography variant="h6" fontWeight="bold">
+          ストーリー
+        </Typography>
+        <Box sx={contentStyle}>
           <Typography variant="body1">
             小学生の時、私はプログラマーになりたかった。
             <br />
@@ -55,7 +78,9 @@ const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
             <br />
             お金問題と私の足りない時間は、コーディング講師をやりながら、開発の復習も、お金の問題も解決していった。やるべきことが多すぎるのでテレビを見る時間など不要なことをやめる事を少しづつ習慣化した。
             <br />
-            周りをいつも整理し、常に効率性を考え、すべてのことをいつも計画する習慣を持ち、私は急速に成長した。そんな中、いくつかの現場を巡り、SB社の日本全域の大型建物の5G無線アンテナ設計プログラムを作ることになった。{' '}
+            周りをいつも整理し、常に効率性を考え、すべてのことをいつも計画する習慣を持ち、私は急速に成長した。
+            <br />
+            そんな中、いくつかの現場を巡り、SB社の日本全域の大型建物の5G無線アンテナ設計プログラムを作ることになった。{' '}
             <br />
             そこで2年間プログラムを作って、ある瞬間、韓国に行くようになった時、
             <br />
@@ -77,10 +102,14 @@ const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
             <br />
             いつの間にか、小学生のころの夢を叶えたようだ。しかし、一度も強く夢を叶えなければならないという欲を出したことがあった。私はただ、「生きた」だけ、夢を見ず、夢を「生きた」。今は、夢のクリークを再調整する必要があるようだ。
             メタバースをしようか？電子マネーを作ろうか？他の国に行ってその国を発展させることができる開発をするか？
+            <br />
+            <br />
             どんなことを想像してもとても楽しいのだ。
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
-            <Button onClick={handleClose}>CLOSE</Button>
+          <Box sx={closeButtonWrapperStyle}>
+            <Button onClick={handleClose} sx={closeButtonStyle}>
+              CLOSE
+            </Button>
           </Box>
         </Box>
       </Box>
