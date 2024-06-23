@@ -113,7 +113,6 @@ const Skills = () => {
         <Typography
           variant="body1"
           onClick={handleOpenModal}
-          style={{ cursor: "pointer" }}
           className="relative py-3 px-[60px] button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Skill Sheet
@@ -121,7 +120,7 @@ const Skills = () => {
         <SkillSheetModal open={modalOpen} handleClose={handleCloseModal} />
       </div>
     </section>
-  );
+  )
 };
 
 export default Skills;
