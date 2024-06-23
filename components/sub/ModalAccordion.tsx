@@ -32,14 +32,6 @@ const ModalAccordion: React.FC<ModalAccordionProps> = ({ open, handleClose }) =>
     transform: 'translate(-50%, -50%)',
   }
 
-  const boxStyle: SxProps<Theme> = {
-    width: '100%',
-    bgcolor: 'black',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  }
-
   const buttonContainerStyle: SxProps<Theme> = {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -54,7 +46,7 @@ const ModalAccordion: React.FC<ModalAccordionProps> = ({ open, handleClose }) =>
         aria-describedby="modal-modal-description"
       >
         <Box sx={positionStyle}>
-          <Box sx={boxStyle}>
+          <Box className="p-[10px] w-full bg-black-500 border border-[#000] shadow-[24px]">
             <Accordion>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
@@ -103,21 +95,9 @@ const ModalAccordion: React.FC<ModalAccordionProps> = ({ open, handleClose }) =>
                 ・コーディング:EC、B2C、B2B Saasソリューションなど多様な分野のプロジェクト経験
               </AccordionDetails>
             </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-                sx={{ bgcolor: 'black', color: 'white' }}
-                onClick={handleOpenStoryModal}
-              >
-                プログラマーになるまでのストーリー
-              </AccordionSummary>
-            </Accordion>
-            <Box sx={buttonContainerStyle}>
-              <Button onClick={handleClose} sx={{ mt: 2 }}>
-                CLOSE
-              </Button>
+            <Box sx={buttonContainerStyle} className="pt-[10px] justify-between">
+              <Button onClick={handleOpenStoryModal}>詳しいストーリーを見る</Button>
+              <Button onClick={handleClose}>CLOSE</Button>
             </Box>
           </Box>
         </Box>
