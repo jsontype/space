@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
-import ModalAccordion from "../sub/ModalAccordion";
+import ModalAccordion from "../sub/ModalAccordion"
 import Image from "next/image";
 
 const Encryption = () => {
