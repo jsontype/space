@@ -1,19 +1,33 @@
+"use client"
+
+import React, { useState } from "react";
+import { Typography } from "@mui/material";
+import SkillDataProvider from "../sub/SkillDataProvider";
+import SkillText from "../sub/SkillText";
+import SkillSheetModal from "../sub/SkillSheetModal";
 import {
   Backend_skill,
   Frontend_skill,
   Other_skill,
   Common_skill,
-} from "@/constants"
-import React from "react"
-import SkillDataProvider from "../sub/SkillDataProvider"
-import SkillText from "../sub/SkillText"
+} from "@/constants";
 
 const Skills = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20 z-[10]"
-      style={{ transform: "scale(0.9" }}
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20 z-[20]"
+      style={{ transform: "scale(0.9)" }}
     >
       <SkillText />
 
@@ -94,17 +108,19 @@ const Skills = () => {
           />
         </div>
       </div>
+
       <div>
-        <a
+        <Typography
+          variant="body1"
+          onClick={handleOpenModal}
           className="relative py-3 px-[60px] button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-          href="https://docs.google.com/spreadsheets/d/1K6zeowhIPLv2ZU4sfpQqwWXwOCbIJ1Z3/edit#gid=214401444"
-          target="_blank"
         >
           Skill Sheet
-        </a>
+        </Typography>
+        <SkillSheetModal open={modalOpen} handleClose={handleCloseModal} />
       </div>
     </section>
   )
-}
+};
 
-export default Skills
+export default Skills;

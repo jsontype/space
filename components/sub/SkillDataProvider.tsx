@@ -37,4 +37,4 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
   )
 }
 
-export default SkillDataProvider
+export default SkillDataProvider;
