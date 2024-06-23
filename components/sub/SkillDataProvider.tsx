@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import React from "react"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Image from "next/image"
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 interface Props {
   src: string
@@ -28,7 +28,7 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
       ref={ref}
       initial="hidden"
       variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
+      animate={inView ? 'visible' : 'hidden'}
       custom={index}
       transition={{ delay: index * animationDelay }}
     >
@@ -37,4 +37,4 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
   )
 }
 
-export default SkillDataProvider;
+export default SkillDataProvider
