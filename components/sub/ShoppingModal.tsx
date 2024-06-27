@@ -7,8 +7,7 @@ interface ShippingModalProps {
 }
 
 const ShippingModal: React.FC<ShippingModalProps> = ({ open, handleClose }) => {
-  const iframeUrl =
-    'https://docs.google.com/spreadsheets/d/1K6zeowhIPLv2ZU4sfpQqwWXwOCbIJ1Z3/edit?gid=214401444#gid=214401444'
+  const iframeUrl = '#'
 
   return (
     <Modal open={open} onClose={handleClose}>
