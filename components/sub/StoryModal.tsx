@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Modal, Box, Typography, Button } from '@mui/material'
-import { SxProps, Theme } from '@mui/material/styles'
 
 interface StoryModalProps {
   open: boolean
@@ -10,41 +9,18 @@ interface StoryModalProps {
 const StoryModal: React.FC<StoryModalProps> = ({ open, handleClose }) => {
   const showScrollbar = useState(false)
 
-  const modalStyle: SxProps<Theme> = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-
-  const modalContentStyle: SxProps<Theme> = {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
-    width: '90%',
-    maxWidth: '1200px',
-    bgcolor: 'white',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-    overflowY: showScrollbar ? 'scroll' : 'auto',
-    maxHeight: '70vh',
-    margin: 'auto',
-  }
-
-  const contentStyle: SxProps<Theme> = {
-    flexGrow: 1,
-    overflowY: 'auto',
-    padding: '20px',
-    position: 'relative',
-  }
-
   return (
-    <Modal open={open} onClose={handleClose} sx={modalStyle}>
-      <Box sx={modalContentStyle}>
+    <Modal open={open} onClose={handleClose} className="flex items-center justify-center">
+      <Box
+        className={`
+            flex flex-col relative w-[90%] max-w-[1200px] bg-white border-2 
+            border-[#000] p-4 max-h-[70vh] m-auto 
+            ${showScrollbar ? 'overflow-y-scroll' : 'overflow-y-auto'} 
+            max-h-[70vh] m-auto`}>
         <Typography className="px-[20px]" variant="h6" fontWeight="bold">
           ストーリー
         </Typography>
-        <Box sx={contentStyle} className="pb-[60px]">
+        <Box className="pb-[60px] flex flex-grow overflow-y-auto p-[20px] relative">
           <Typography variant="body1">
             小学生の時、私はプログラマーになりたかった。
             <br />

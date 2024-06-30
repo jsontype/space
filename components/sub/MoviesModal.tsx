@@ -11,17 +11,7 @@ const MoviesModal: React.FC<MoviesModalProps> = ({ open, handleClose }) => {
 
   return (
     <Modal open={open} onClose={handleClose}>
-      <Box
-        sx={{
-          width: '80%',
-          height: '80%',
-          bgcolor: 'white',
-          p: 4,
-          mx: 'auto',
-          mt: '10%',
-          overflow: 'auto',
-        }}
-      >
+      <Box className="w-[80%] h-[80%] bg-white p-[16px] mx-auto mt-[10%] overflow-auto">
         <Typography variant="h6">Movies Modal</Typography>
         <iframe title="Movies Modal" src={iframeUrl} width="100%" height="100%"></iframe>
       </Box>
