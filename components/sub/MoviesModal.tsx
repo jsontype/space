@@ -7,7 +7,7 @@ interface MoviesModalProps {
 }
 
 const MoviesModal: React.FC<MoviesModalProps> = ({ open, handleClose }) => {
-  const iframeUrl = '#'
+  const iframeUrl = 'https://movies-react-beige.vercel.app'
 
   return (
     <Modal open={open} onClose={handleClose}>
