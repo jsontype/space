@@ -12,19 +12,19 @@ const Projects = () => {
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
           name="movies"
-          src="/NextWebsite.png"
+          src="/MoviesImage.png"
           title="Movies App Demo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <ProjectCard
-          name="todos"
-          src="/SpaceWebsite.png"
-          title="Todos App Demo"
+          name="crypto"
+          src="/CryptoImage.png"
+          title="Crypto App Demo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />
         <ProjectCard
           name="shopping"
-          src="/CardImage.png"
+          src="/SpaceWebsite.png"
           title="Shopping App Demo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         />

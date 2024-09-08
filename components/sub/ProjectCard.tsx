@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import MoviesModal from './MoviesModal'
-import TodosModal from './TodosModal'
+import CryptoModal from './CyrptoModal'
 import ShoppingModal from './ShoppingModal'
 
 interface Props {
@@ -24,8 +24,8 @@ const ProjectCard = ({ src, title, name, description }: Props) => {
     switch (name) {
       case 'movies':
         return <MoviesModal open={open} handleClose={handleClose} />
-      case 'todos':
-        return <TodosModal open={open} handleClose={handleClose} />
+      case 'crypto':
+        return <CryptoModal open={open} handleClose={handleClose} />
       case 'shopping':
         return <ShoppingModal open={open} handleClose={handleClose} />
       default:
